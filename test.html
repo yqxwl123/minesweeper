@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>科技感界面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a192f 100%);
+            color: #64ffda;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: rgba(10, 25, 47, 0.7);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #64ffda33;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #64ffda;
+            text-shadow: 0 0 10px #64ffda55;
+        }
+
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu a {
+            color: #ccd6f6;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu a:hover {
+            color: #64ffda;
+            background: rgba(100, 255, 218, 0.1);
+        }
+
+        .menu a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #64ffda;
+            transition: width 0.3s ease;
+        }
+
+        .menu a:hover::before {
+            width: 100%;
+        }
+
+        .hero {
+            margin-top: 100px;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #ccd6f6;
+            text-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #8892b0;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 0;
+        }
+
+        .card {
+            background: rgba(10, 25, 47, 0.5);
+            border: 1px solid #64ffda33;
+            border-radius: 10px;
+            padding: 30px;
+            transition: transform 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(100, 255, 218, 0.1);
+        }
+
+        .card h3 {
+            color: #64ffda;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .card p {
+            color: #8892b0;
+            line-height: 1.6;
+        }
+
+        .glowing-btn {
+            padding: 12px 24px;
+            background: transparent;
+            border: 2px solid #64ffda;
+            color: #64ffda;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .glowing-btn:hover {
+            background: rgba(100, 255, 218, 0.1);
+            box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles-js"></div>
+    
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">TechUI</div>
+            <div class="menu">
+                <a href="#home">首页</a>
+                <a href="#about">关于</a>
+                <a href="#projects">项目</a>
+                <a href="#contact">联系</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1 class="floating-element">未来科技</h1>
+            <p>探索科技的无限可能，创造数字化的未来世界</p>
+            <button class="glowing-btn">了解更多</button>
+        </section>
+
+        <section class="cards">
+            <div class="card">
+                <h3>人工智能</h3>
+                <p>探索AI的无限可能，打造智能化未来。通过机器学习和深度学习，实现智能决策和预测。</p>
+            </div>
+            <div class="card">
+                <h3>区块链</h3>
+                <p>去中心化的未来，安全可信的数据存储和交易系统。构建更加透明和高效的价值网络。</p>
+            </div>
+            <div class="card">
+                <h3>物联网</h3>
+                <p>连接一切，智能感知，数据驱动。打造智能化的生活环境，提升生活品质。</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#64ffda' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: false },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#64ffda',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'repulse' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+</body>
+</html>
